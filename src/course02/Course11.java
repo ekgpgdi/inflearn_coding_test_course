@@ -10,12 +10,15 @@ public class Course11 {
 
         for (int i = 0; i < dataSet.length; i++) {
             int count = 0;
-            for (int j = 0; j < dataSet[i].length; j++) {
-                int ban = dataSet[i][j];
+            for (int j = 0; j < dataSet.length; j++) {
                 for(int k = 0; k < dataSet[i].length; k++) {
-                    if(ban == dataSet[k][i]) count ++;
+                    if(dataSet[i][k] == dataSet[j][k]) {
+                        count ++;
+                        break;
+                    }
                 }
             }
+
             if(count > max) {
                 max = count;
                 answer = i;
@@ -29,10 +32,10 @@ public class Course11 {
         Course11 T = new Course11();
         Scanner in = new Scanner(System.in);
         int n = in.nextInt();
-        int[][] dataSet = new int[n][n];
+        int[][] dataSet = new int[n][5];
 
         for (int i = 0; i < n; i++) {
-            for (int j = 0; j < n; j++) {
+            for (int j = 0; j < 5; j++) {
                 dataSet[i][j] = in.nextInt();
             }
         }
