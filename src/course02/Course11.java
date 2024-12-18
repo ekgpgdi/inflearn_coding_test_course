@@ -12,12 +12,8 @@ public class Course11 {
             int count = 0;
             for (int j = 0; j < dataSet[i].length; j++) {
                 int ban = dataSet[i][j];
-                for (int x = 0; x < j; x++) {
-                    if(ban == dataSet[x][i]) count ++;
-                }
-                for (int x = j + 1; x < dataSet.length; x++) {
-                    if(ban == dataSet[x][i]) count ++;
-
+                for(int k = 0; k < dataSet[i].length; k++) {
+                    if(ban == dataSet[k][i]) count ++;
                 }
             }
             if(count > max) {
