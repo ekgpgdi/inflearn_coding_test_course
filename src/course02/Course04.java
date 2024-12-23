@@ -2,6 +2,7 @@ package course02;
 
 import java.util.Scanner;
 
+// 피보나치 수열 : 앞 2개의 수를 합하여 다음 숫자가 되는 수열
 public class Course04 {
   private int[] solution(int count) {
     int[] answer = new int[count];

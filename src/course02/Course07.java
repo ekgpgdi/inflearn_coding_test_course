@@ -2,6 +2,7 @@ package course02;
 
 import java.util.Scanner;
 
+// 연속적으로 답을 맞히는 경우에는 가산점 부과
 public class Course07 {
 
     public int solution(int[] dataSet) {

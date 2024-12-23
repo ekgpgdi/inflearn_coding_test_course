@@ -2,6 +2,7 @@ package course02;
 
 import java.util.Scanner;
 
+// 바로 앞 수보다 큰 수만 출력
 public class Course01 {
   private String solution(int[] dataSet) {
     String answer = dataSet[0] + " ";

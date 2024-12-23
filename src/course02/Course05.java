@@ -2,6 +2,7 @@ package course02;
 
 import java.util.Scanner;
 
+// 소수 개수 : 에라토스네스 체
 public class Course05 {
     public int solution(int n) {
         int answer = 0;

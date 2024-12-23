@@ -2,6 +2,7 @@ package course02;
 
 import java.util.Scanner;
 
+// 선생님이 볼 수 있는 학생의 수 (앞에 서있는 사람보다 크면 보임)
 public class Course02 {
   private int solution(int[] dataSet) {
     int count = 1;

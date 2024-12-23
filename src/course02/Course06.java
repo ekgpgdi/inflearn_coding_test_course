@@ -2,6 +2,7 @@ package course02;
 
 import java.util.Scanner;
 
+// 각 자연수를 뒤집은 후 그 뒤집은 수가 소수이면 출력
 public class Course06 {
     public boolean isCheck(int x) {
         if (x == 1) return false;

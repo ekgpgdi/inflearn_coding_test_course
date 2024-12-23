@@ -2,6 +2,7 @@ package course02;
 
 import java.util.Scanner;
 
+// 행 : 학생, 열 : 반 가장 같은 반이었던 경우가 많은 학생 출력
 public class Course11 {
 
     public int solution(int[][] dataSet) {

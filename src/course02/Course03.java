@@ -2,6 +2,7 @@ package course02;
 
 import java.util.Scanner;
 
+// 가위바위보 게임
 public class Course03 {
   // 1:가위, 2:바위, 3:보로
   private String[] solution(int[] aDataSet, int[] bDataSet) {

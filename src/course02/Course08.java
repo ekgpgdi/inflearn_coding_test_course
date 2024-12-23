@@ -2,21 +2,16 @@ package course02;
 
 import java.util.Scanner;
 
+// 등수 구하기
 public class Course08 {
 
     public int[] solution(int[] dataSet) {
         int[] grade = new int[dataSet.length];
 
         for (int i = 0; i < dataSet.length; i++) {
-            grade[i] = 1;
-            int max = dataSet[i];
             int count = 0;
             for (int j = 0; j < i; j++) {
-                if(dataSet[j] < max) {
-                    grade[j] += 1;
-                } else if  (dataSet[j] > max) {
-                    count++;
-                }
+                if (dataSet[j] > dataSet[i]) count++;
             }
             grade[i] += count;
         }
@@ -34,7 +29,7 @@ public class Course08 {
             dataSet[i] = in.nextInt();
         }
 
-        for(int x : T.solution(dataSet)) {
+        for (int x : T.solution(dataSet)) {
             System.out.print(x + " ");
         }
     }

@@ -3,6 +3,7 @@ package course02;
 import java.util.Scanner;
 import java.util.*;
 
+// 행 : 수학 시험 열 : 등수 모든 시험에서 등수가 앞서는 멘토 - 멘티 조합 수
 public class Course12 {
 
     public int solution(int[][] dataSet) {

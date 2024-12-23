@@ -2,6 +2,7 @@ package course02;
 
 import java.util.Scanner;
 
+// 격자판 각 행의 합, 각 열의 합, 두 대각선의 합 중 가장 큰 합 출력
 public class Course09 {
 
     public int solution(int[][] dataSet) {
