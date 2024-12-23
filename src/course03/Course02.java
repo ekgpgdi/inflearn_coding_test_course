@@ -3,6 +3,7 @@ package course03;
 import java.util.Scanner;
 import java.util.*;
 
+// 공통 원소 추출 후 오름차순 출력
 public class Course02 {
     public ArrayList<Integer> solution(int[] aSet, int[] bSet) {
         ArrayList<Integer> answer = new ArrayList<>();
@@ -11,15 +12,15 @@ public class Course02 {
 
         int p1 = 0, p2 = 0;
 
-        while(p1 < aSet.length && p2 < bSet.length) {
-            if(aSet[p1] < bSet[p2]) {
-                p1 ++;
-            } else if(aSet[p1] > bSet[p2]) {
-                p2 ++;
+        while (p1 < aSet.length && p2 < bSet.length) {
+            if (aSet[p1] < bSet[p2]) {
+                p1++;
+            } else if (aSet[p1] > bSet[p2]) {
+                p2++;
             } else {
                 answer.add(aSet[p1]);
-                p1 ++;
-                p2 ++;
+                p1++;
+                p2++;
             }
         }
 

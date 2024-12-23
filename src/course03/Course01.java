@@ -2,6 +2,7 @@ package course03;
 
 import java.util.Scanner;
 
+// 배열 오름차순으로 합치기
 public class Course01 {
     public int[] solution(int[] aSet, int[] bSet) {
         int[] answer = new int[aSet.length + bSet.length];

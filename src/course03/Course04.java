@@ -2,6 +2,7 @@ package course03;
 
 import java.util.Scanner;
 
+// 연속 부분 수열의 합이 특정 숫자가 되는 경우의 수
 public class Course04 {
     public int solution(int[] dataSet, int k) {
         int answer = 0;
@@ -15,7 +16,7 @@ public class Course04 {
             while (sum >= k) {
                 sum -= dataSet[lt++];
 
-                if(sum == k) answer ++;
+                if (sum == k) answer++;
             }
         }
 

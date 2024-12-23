@@ -2,6 +2,7 @@ package course03;
 
 import java.util.Scanner;
 
+// 연속된 K일 동안의 최대 매출액
 public class Course03 {
     public int solution(int[] dataSet, int k) {
         int max = 0;
@@ -11,9 +12,9 @@ public class Course03 {
         }
 
         int sum = max;
-        for (int i = k; i < dataSet.length ; i++) {
+        for (int i = k; i < dataSet.length; i++) {
             sum = sum + dataSet[i] - dataSet[i - k];
-            if(sum > max) {
+            if (sum > max) {
                 max = sum;
             }
         }

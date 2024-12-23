@@ -1,24 +1,30 @@
 package course03;
 
+import com.sun.tools.javac.Main;
+
 import java.util.Scanner;
 
+// 2개 이상의 연속된 자연수로 정수 K 를 표현하는 방법의 가지 수
 public class Course05 {
-    public int solution(int[] dataSet, int k) {
+    public int solution(int n) {
         int answer = 0;
-        int lt = 0;
-        int count = 0;
+        int lt = 1;
+        int sum = 0;
 
-        for(int rt = 0; rt < dataSet.length; rt ++) {
-            if(dataSet[rt] == 0) count ++;
-
-            while(count > k) {
-                if(dataSet[lt] == 0) count --;
-                lt ++;
+        for (int rt = 1; rt <= (n / 2) + 1; rt++) {
+            sum += rt;
+            if (sum == n) {
+                answer++;
             }
 
-            answer = Math.max(answer, rt - lt + 1);
+            while (sum > n) {
+                sum -= lt;
+                lt++;
+                if (sum == n) {
+                    answer++;
+                }
+            }
         }
-
         return answer;
     }
 
@@ -26,13 +32,6 @@ public class Course05 {
         Course05 T = new Course05();
         Scanner in = new Scanner(System.in);
         int n = in.nextInt();
-        int k = in.nextInt();
-
-        int[] dataSet = new int[n];
-        for (int i = 0; i < n; i++) {
-            dataSet[i] = in.nextInt();
-        }
-
-        System.out.println(T.solution(dataSet, k));
+        System.out.println(T.solution(n));
     }
 }
