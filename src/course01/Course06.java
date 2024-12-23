@@ -2,6 +2,7 @@ package course01;
 
 import java.util.Scanner;
 
+// 중복 문자 제거
 public class Course06 {
     public String solution(String str) {
         String answer = "";

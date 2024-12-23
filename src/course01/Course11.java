@@ -2,6 +2,7 @@ package course01;
 
 import java.util.Scanner;
 
+// 각 문자의 연속 반복 횟수 표기
 public class Course11 {
     public String solution(String str) {
         String answer = "";

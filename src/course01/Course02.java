@@ -2,6 +2,7 @@ package course01;
 
 import java.util.Scanner;
 
+// 대문자는 소문자로, 소문자는 대문자로
 public class Course02 {
     public String solution(String str) {
         String answer = "";

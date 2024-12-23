@@ -2,6 +2,7 @@ package course01;
 
 import java.util.Scanner;
 
+// # -> 1, * -> 0 변환 후 2진수를 10진수화
 public class Course12 {
     public String solution(String str) {
         String answer = "";

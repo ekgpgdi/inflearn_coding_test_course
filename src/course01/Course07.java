@@ -2,6 +2,7 @@ package course01;
 
 import java.util.Scanner;
 
+// 회문 문자열 : 앞에서 읽을 때나 뒤에서 읽을 때나 같은 문자열
 public class Course07 {
     public String solution(String str) {
         str = str.toUpperCase();

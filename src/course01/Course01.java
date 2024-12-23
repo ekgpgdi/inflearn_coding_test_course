@@ -2,24 +2,25 @@ package course01;
 
 import java.util.Scanner;
 
+// 특정 문자가 문자열에 몇 개 존재하는지
 public class Course01 {
     public int solution(String str, char c) {
         int answer = 0;
         str = str.toUpperCase();
         c = Character.toUpperCase(c);
 
-        for(char t : str.toCharArray()) {
-            if(t == c) {
-                answer ++;
+        for (char t : str.toCharArray()) {
+            if (t == c) {
+                answer++;
             }
         }
 
         return answer;
     }
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         Course01 T = new Course01();
-        Scanner in=new Scanner(System.in);
+        Scanner in = new Scanner(System.in);
         String str = in.next();
         char c = in.next().charAt(0);
 

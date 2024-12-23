@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+// 't' 와 c 가 떨어진 거리
 public class Course10 {
     public List<Integer> solution(String str, char c) {
         List<Integer> answer = new ArrayList<>();

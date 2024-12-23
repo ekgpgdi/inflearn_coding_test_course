@@ -3,6 +3,7 @@ package course01;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+// 문자열 뒤집기 Ex. good -> doog
 public class Course04 {
     public ArrayList<String> solution(String[] strList) {
         ArrayList<String> answer = new ArrayList<>();

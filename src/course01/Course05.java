@@ -2,6 +2,7 @@ package course01;
 
 import java.util.Scanner;
 
+// 문자열 내 특수문자는 그대로, 알파벳만 뒤집기
 public class Course05 {
     public String solution(String str) {
         char[] c = str.toCharArray();

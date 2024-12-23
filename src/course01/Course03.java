@@ -2,6 +2,7 @@ package course01;
 
 import java.util.Scanner;
 
+// 문장 속 가장 긴 단어 출력
 public class Course03 {
     public String solution(String str) {
         String answer = "";
