@@ -3,6 +3,7 @@ package course04;
 import java.util.*;
 import java.util.Scanner;
 
+// 3장을 뽑을 수 있는 경우의 수 중 k 번째 큰 값
 public class Course05 {
 
   public int solution(int[] dataSet, int k) {

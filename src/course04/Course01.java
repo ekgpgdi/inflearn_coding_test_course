@@ -3,6 +3,7 @@ package course04;
 import java.util.HashMap;
 import java.util.Scanner;
 
+// 투표에 따른 학급회장
 public class Course01 {
   public char solution(int n, String str) {
     char answer = 0;

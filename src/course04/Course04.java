@@ -3,6 +3,7 @@ package course04;
 import java.util.*;
 import java.util.Scanner;
 
+// S 문자열에서 T 문자열과 아나그램이 되는 S의 부분 문자열의 개수 출력
 public class Course04 {
   public boolean checkAnagram(
       HashMap<Character, Integer> checkPointCountList,

@@ -3,6 +3,7 @@ package course04;
 import java.util.*;
 import java.util.Scanner;
 
+// 연속된 K일 동안의 매출액 종류
 public class Course03 {
   public List<Integer> solution(int[] dataSet, int size) {
     List<Integer> answerList = new ArrayList<>();
