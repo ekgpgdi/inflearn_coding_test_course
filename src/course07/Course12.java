@@ -3,10 +3,10 @@ package course07;
 import java.util.Scanner;
 
 public class Course12 {
-    // DFS
+    // DFS, 인접 행렬, n 노드를 가기 위한 경우의 수
     static int n, m, answer = 0;
     static int[][] graph;
-    static int[] ch;
+    static int[] ch; // 한 번 지나간 노드는 다시 가지 않기 위해서 체크
 
     public void DFS(int v) {
         if (v == n) answer++;
@@ -24,8 +24,8 @@ public class Course12 {
     public static void main(String[] args) {
         Course12 T = new Course12();
         Scanner in = new Scanner(System.in);
-        int n = in.nextInt();
-        int m = in.nextInt();
+        n = in.nextInt();
+        m = in.nextInt();
         graph = new int[n + 1][n + 1];
         ch = new int[n + 1];
 
