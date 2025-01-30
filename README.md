@@ -8,7 +8,7 @@
    4. [Integer 관련 함수](#Integer-관련-함수)
    5. [추가로 유용한 String 관련 함수](#추가로-유용한-String-관련-함수)
 2. [Course02: 알고리즘 정리](#Course02.-알고리즘-정리)
-   1. [에라토스네스 체 알고리즘 : 소수 개수 / 출력](#1.-에라토스네스-체-알고리즘--소수-개수--출력)
+   1. [에라토스네스 체 알고리즘 : 소수 개수 / 출력](#1.-에라토스네스-체-알고리즘--소수-개수-출력)
 3. [Course03: 슬라이딩 윈도우와 투 포인터 알고리즘 (Sliding Window & Two Pointer Algorithm)](#Course03.-슬라이딩-윈도우와-투-포인터-알고리즘-(Sliding-Window-&-Two-Pointer-Algorithm))
    1. [슬라이딩 윈도우](#슬라이딩-윈도우)
    2. [투 포인터](#투-포인터)
@@ -27,8 +27,8 @@
    5. [이분 검색 (Binary Search)](#5.-이분-검색-(Binary-Search))
    6. [결정 알고리즘](#6.-결정-알고리즘)
 7. [Course07: DFS와 BFS](#Course07.-DFS와-BFS)
-   1. [DFS (Depth-First Search) - 깊이 우선 탐색](#DFS-(Depth-First-Search)--깊이-우선-탐색)
-   2. [BFS (Breadth-First Search) - 너비 우선 탐색](#BFS-(Breadth-First-Search)--너비-우선-탐색)
+   1. [DFS (Depth-First Search) - 깊이 우선 탐색](#DFS-(Depth-First-Search)-깊이-우선-탐색)
+   2. [BFS (Breadth-First Search) - 너비 우선 탐색](#BFS-(Breadth-First-Search)-너비-우선-탐색)
    3. [그래프와 인접 행렬](#그래프와-인접-행렬)
       1. [1. 무방향 그래프 (Undirected Graph)](#1.-무방향-그래프-(Undirected-Graph))
       2. [2. 방향 그래프 (Directed Graph)](#2.-방향-그래프-(Directed-Graph))
@@ -164,7 +164,7 @@
 
 # Course02. 알고리즘 정리
 
-## 1. 에라토스네스 체 알고리즘 : 소수 개수 / 출력
+## 1. 에라토스네스 체 알고리즘 : 소수 개수 출력
 
 에라토스네스 체 알고리즘은 주어진 수까지의 소수를 구하는 효율적인 방법입니다. 이 알고리즘은 소수인지 아닌지에 대한 정보를 담은 체크 배열을 사용합니다.
 
@@ -752,7 +752,7 @@ return answer;
 
 # Course07. DFS와 BFS
 
-## DFS (Depth First Search) : 깊이 우선 탐색
+## DFS (Depth First Search) 깊이 우선 탐색
 
 ### 정의
 DFS는 그래프나 트리의 모든 노드를 탐색하는 알고리즘으로, 자식 노드를 우선적으로 탐색한 뒤, 형제 노드로 이동하는 방식입니다. 주로 재귀를 이용하여 구현되며, 경로를 구하거나 경우의 수를 찾는 문제에서 유용합니다.
@@ -807,7 +807,7 @@ public static void main(String[] args) {
 
 ---
 
-## BFS (Breadth First Search) : 너비 우선 탐색
+## BFS (Breadth First Search) 너비 우선 탐색
 
 ### 정의
 BFS는 그래프나 트리에서 인접한 노드부터 차례대로 탐색하는 알고리즘입니다. 큐를 사용하여 구현되며, 최단 거리 문제나 레벨 단위로 탐색해야 하는 문제에서 유용합니다.
