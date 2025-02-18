@@ -4,15 +4,6 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
 
-class Point12 {
-    public int x, y;
-
-    public Point12(int x, int y) {
-        this.x = x;
-        this.y = y;
-    }
-}
-
 public class Course12 {
     static int[] dx = new int[]{-1, 0, 1, 0};
     static int[] dy = new int[]{0, 1, 0, -1};
