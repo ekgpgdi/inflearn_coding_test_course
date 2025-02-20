@@ -213,3 +213,109 @@ public class Course05 {
 9. 그래프 초기화: 그래프를 인접 리스트로 초기화합니다.
 10. 간선 정보 입력: 간선 정보를 입력받고, 그래프에 추가합니다.
 11. 결과 출력: 다익스트라 알고리즘을 실행한 후, 각 노드에 대한 최단 경로를 출력합니다.
+
+---
+## Union&Find 알고리즘
+: 여러 개의 원소가 있을 때 <br/>
+* 같은 그룹(집합)에 속해 있는지 판별하거나
+* 두 그룹을 합치는 연산을 수행하는 알고리즘이다.
+  * 이 알고리즘은 대표적으로 그래프에서 사이클 판별, **최소 신장 트리(MST)** 를 찾는 데 사용된다.
+
+### 📌 동작 과정
+1. unf 배열을 생성하여 초기값을 자기 자신으로 설정 (unf[i] = i)
+2. Union(a, b) 연산을 수행하며 두 개의 집합을 합침
+3. 특정 두 원소가 같은 집합에 속해 있는지 확인 (Find(a) == Find(b))
+4. 결과 출력 (같은 집합이면 "YES", 아니면 "NO")
+
+### 코드 예시
+```java
+// 서로소 집합 Disjoint-Set -> Union&Find 알고리즘
+    static int[] unf;
+
+    // Find : 집합 번호를 Return
+    public int Find(int v) {
+        if (v == unf[v]) return v;
+        else return unf[v] = Find(unf[v]); // 같은 집합의 경우 모두 같은 집합 번호 수로 맞춰줌
+    }
+
+    public void Union(int a, int b) {
+        int fa = Find(a);
+        int fb = Find(b);
+        if (fa != fb) unf[fa] = fb; // 동일한 집합 번호로 맞춰줌 : 압축
+    }
+
+    public static void main(String[] args) {
+        Course06 T = new Course06();
+        Scanner in = new Scanner(System.in);
+
+        int n = in.nextInt();
+        int m = in.nextInt();
+
+        unf = new int[n + 1];
+        for (int i = 1; i <= n; i++) unf[i] = i;
+        for (int i = 1; i <= m; i++) {
+            int a = in.nextInt();
+            int b = in.nextInt();
+            T.Union(a, b);
+        }
+        int a = in.nextInt();
+        int b = in.nextInt();
+        int fa = T.Find(a);
+        int fb = T.Find(b);
+
+        if(fa == fb) System.out.println("YES");
+        else System.out.println("NO");
+    }
+```
+
+#### Find 연산
+* 특정 원소가 속한 집합(루트 노드)을 찾는 연산
+* 경로 압축(Path Compression) 기법을 적용하여 성능을 최적화함
+```java
+public int Find(int v) {
+    if (v == unf[v]) return v; // 자기 자신이 루트면 반환
+    else return unf[v] = Find(unf[v]); // 경로 압축 적용
+}
+```
+
+#### Union 연산
+* 두 개의 집합을 하나로 합치는 연산
+* Find 연산을 이용해 각 집합의 대표(루트)를 찾은 후, 한쪽을 다른 쪽에 연결
+```java
+public void Union(int a, int b) {
+    int fa = Find(a); // a의 루트 찾기
+    int fb = Find(b); // b의 루트 찾기
+    if (fa != fb) unf[fa] = fb; // 두 집합이 다르면 하나로 합치기
+}
+```
+
+### 초기 세팅
+```java
+public static void main(String[] args) {
+    Course06 T = new Course06();
+    Scanner in = new Scanner(System.in);
+
+    int n = in.nextInt(); // 노드 개수
+    int m = in.nextInt(); // Union 연산 횟수
+
+    unf = new int[n + 1]; // 1-based index 사용
+    for (int i = 1; i <= n; i++) unf[i] = i; // 초기화: 자기 자신이 대표
+
+    // m번의 Union 연산 수행
+    for (int i = 1; i <= m; i++) {
+        int a = in.nextInt();
+        int b = in.nextInt();
+        T.Union(a, b);
+    }
+
+    int a = in.nextInt();
+    int b = in.nextInt();
+    
+    // Find 연산을 이용해 같은 집합인지 확인
+    int fa = T.Find(a);
+    int fb = T.Find(b);
+
+    if(fa == fb) System.out.println("YES"); // 같은 집합이면 YES
+    else System.out.println("NO"); // 아니면 NO
+}
+```
