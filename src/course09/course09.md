@@ -319,3 +319,104 @@ public static void main(String[] args) {
     else System.out.println("NO"); // 아니면 NO
 }
 ```
+
+--- 
+## 최소 스패닝 트리 (Minimum Spanning Tree, MST)
+: 모든 도시를 서로 연결하면서 최소의 유지비용이 들도록 선택하는 방법
+
+### 크루스칼 알고리즘 : Union & Find 사용
+
+```java
+public static int Find(int v) {
+    if (v == unf[v]) return v;
+    else return unf[v] = Find(unf[v]);
+}
+
+public static void Union(int a, int b) {
+    int fa = Find(a);
+    int fb = Find(b);
+    if (fa != fb) unf[fa] = fb;
+}
+
+public static void main(String[] args) {
+    // ... (입력 처리) ...
+
+    unf = new int[n + 1];
+    ArrayList<Course07Edge> arr = new ArrayList<>();
+
+    for (int i = 1; i <= n; i++) unf[i] = i;
+    for (int i = 1; i <= m; i++) {
+        // ... (간선 정보 입력) ...
+        arr.add(new Course07Edge(a, b, c));
+    }
+
+    Collections.sort(arr); // 간선 비용 기준 오름차순 정렬
+
+    int answer = 0;
+    int count = 0;
+
+    for (Course07Edge edge : arr) {
+        int fv1 = Find(edge.v1);
+        int fv2 = Find(edge.v2);
+
+        if (fv1 != fv2) { // 두 정점이 같은 집합에 속하지 않으면
+            answer += edge.cost; // 비용 추가
+            Union(edge.v1, edge.v2); // 두 정점을 같은 집합으로 합침
+            count++;
+
+            if (count == n - 1) break; // 모든 정점이 연결되면 종료
+        }
+    }
+
+    System.out.println(answer);
+}
+```
+1. 간선 정렬: 간선들을 비용을 기준으로 오름차순 정렬합니다.
+2. 집합 확인: 정렬된 간선들을 순회하며 각 간선의 두 정점이 같은 집합에 속하는지 확인합니다. - Find
+3. MST 구성: 두 정점이 다른 집합에 속하면 해당 간선을 MST에 포함시키고, 두 정점을 같은 집합으로 합칩니다. - Union
+4. 종료 조건: 모든 정점이 하나의 집합으로 합쳐지면(n-1개의 간선이 선택되면) 종료합니다.
+
+### 프림 알고리즘 : PriorityQueue 사용
+
+```java
+public static void main(String[] args) {
+    // ... (입력 처리) ...
+
+    ArrayList<ArrayList<Course08Edge>> graph = new ArrayList<>();
+    for (int i = 0; i <= n; i++) graph.add(new ArrayList<Course08Edge>());
+    int[] ch = new int[n + 1];
+
+    for (int i = 1; i <= m; i++) {
+        // ... (간선 정보 입력 및 인접 리스트 구성) ...
+        graph.get(a).add(new Course08Edge(b, c));
+        graph.get(b).add(new Course08Edge(a, c));
+    }
+
+     int answer = 0;
+     PriorityQueue<Course08Edge> pQ = new PriorityQueue<>();
+     pQ.offer(new Course08Edge(1, 0)); // 시작 정점을 우선순위 큐에 삽입
+
+     while (!pQ.isEmpty()) {
+        Course08Edge edge = pQ.poll();
+        int v = edge.vex;
+
+        if (ch[v] == 0) { // 방문하지 않은 정점이면
+           ch[v] = 1; // 방문 처리
+           answer += edge.cost; // 비용 추가
+   
+           for (Course08Edge nextEdge : graph.get(v)) {
+              if (ch[nextEdge.vex] == 0) { // 다음 정점이 방문하지 않았다면
+                  // pQ.offer(nextEdge); // 우선순위 큐에 삽입
+              }
+           }
+        }
+     }
+     System.out.println(answer);
+}
+```
+
+1. 인접 리스트 구성: 그래프의 인접 리스트를 생성합니다.
+2. 시작 정점 선택: 시작 정점을 선택하고 우선순위 큐에 삽입합니다.
+3. MST 확장: 우선순위 큐에서 비용이 가장 작은 간선을 꺼내어 연결된 정점을 방문합니다.
+4. 방문 처리: 방문하지 않은 정점이면 방문 처리하고, 해당 정점에서 갈 수 있는 다른 정점들을 우선순위 큐에 삽입합니다.
+5. 종료 조건: 우선순위 큐가 빌 때까지 반복합니다.
